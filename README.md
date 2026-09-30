@@ -33,7 +33,7 @@ The skills run in Claude Code, Cursor, Codex, and 40+ agents. The full agent run
 | Skill | What it does |
 |-------|--------------|
 | [javascript-animation](./skills/javascript-animation) | Short animated films computed on an HTML canvas: stories, explainers, loops, picture books from your photos. A drawing library (hand-drawn ink, picture-book illustration, spot-color print, single-line engraving, words as shapes, marker fills), a seek-and-render harness to MP4, contact sheets, and a zero-asset audit. |
-| [soundtrack](./skills/soundtrack) | Music written in code with Web Audio for each film, living inside the same page and rendered offline to WAV. Two templates (a groove with four instrument kits, a music box) when a film wants what they make. A tempo map lands every scene cut on a downbeat, marked by harmony rather than volume. A sync check fails the render if a cut misses the beat or the music jumps loud enough to startle. Also works with AI-generated or your own music. |
+| [soundtrack](./skills/soundtrack) | Music written in code with Web Audio for each film, living inside the same page and rendered offline to WAV. Two templates (a groove with four instrument kits, a music box) only when you ask for them. A tempo map lands every scene cut on a downbeat, marked by harmony rather than volume. A sync check fails the render if a cut misses the beat or the music jumps loud enough to startle. Also works with AI-generated or your own music. |
 
 ## How it works
 

@@ -6,7 +6,7 @@ The starter already has the skeleton. This is a self-check step: don't stop to a
 
 ## 1. Beat grid
 
-- Pick a tempo from the mood: 60-80 bpm lullaby or ambient, 85-105 explainer, 110-140 comedy or energetic. `b(n)` is the n-th beat in seconds.
+- Pick a tempo from the mood of this film. `b(n)` is the n-th beat in seconds.
 - Pick a shape for the sections that fits the piece, for example:
   - **escalation**: intro, build, peak, break, payoff (comedy, reveals)
   - **steady**: one texture that breathes and evolves, no drop (ambient, lullaby, poem)
@@ -19,12 +19,12 @@ The starter already has the skeleton. This is a self-check step: don't stop to a
 
 One row per shot. Pick the pace from the form:
 
-| Form | Typical shot length | 30 s is about |
-|---|---|---|
-| Comedy, hype | 1-3 s | 12-20 shots |
-| Story | 2-5 s | 7-12 shots |
-| Explainer | 3-6 s (one idea per shot) | 5-9 shots |
-| Lullaby, ambient, poem | 5-10 s, long dissolves | 3-6 shots |
+| Form | Typical shot length |
+|---|---|
+| Comedy, hype | 1-3 s |
+| Story | 2-5 s |
+| Explainer | 3-6 s (one idea per shot) |
+| Lullaby, ambient, poem | 5-10 s, long dissolves |
 
 A long shot is fine; a long shot where nothing is alive is not.
 
@@ -55,7 +55,7 @@ This is how a story or an explainer holds together. A film that is neither (a ti
 
 ## 5. Events
 
-`EVENTS` lists every visible action with a sound: `[[seconds, 'sfxName', arg], ...]`. The scenes trigger the action at the same time; `buildGroove` (soundtrack skill) plays the sound. One list, two readers.
+`EVENTS` lists every visible action with a sound: `[[seconds, 'soundName', arg], ...]`. The scenes trigger the action at the same time; the score (soundtrack skill) plays its sound. One list, two readers.
 
 ## 6. Check the picture against the storyboard
 
