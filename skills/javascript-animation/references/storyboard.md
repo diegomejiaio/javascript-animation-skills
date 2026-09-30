@@ -6,7 +6,7 @@ The starter already has the skeleton. This is a self-check step: don't stop to a
 
 ## 1. Beat grid
 
-- Pick a tempo from the mood: 60-80 bpm lullaby or ambient, 85-105 explainer, 110-140 comedy or energetic. `b(n)` is the n-th beat in seconds.
+- Pick a tempo from the mood of this film. `b(n)` is the n-th beat in seconds.
 - Pick a shape for the sections that fits the piece, for example:
   - **escalation**: intro, build, peak, break, payoff (comedy, reveals)
   - **steady**: one texture that breathes and evolves, no drop (ambient, lullaby, poem)

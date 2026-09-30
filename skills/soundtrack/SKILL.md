@@ -8,33 +8,16 @@ version: 0.4.1
 
 ## Write the sound for this film
 
-A film's sound is written for that film: its own instruments, rhythm and harmony in Web Audio, from nothing, in `window.SCORE = ac => { … }` (oscillators, noise, filters, envelopes, delays: whatever the piece calls for). Drums, a groove or a music-box bed are written the same way, for this film: no two films should sound alike because they share a template. The two templates below are used only when the user asks for them.
+A film's sound is written for that film: its own instruments, rhythm and harmony in Web Audio, from nothing, in `window.SCORE = ac => { … }` (oscillators, noise, filters, envelopes, delays: whatever the piece calls for). Drums, a groove or a music-box bed are written the same way, for this film: no two films should sound alike because they share a template. `templates/groove.js` and `templates/score.js` are two ready-made scores, used only when the user asks for them; each file documents its options.
 
-- `templates/groove.js`: a beat grid with sections, drums, bass, pads, a lead, optional breaks, and ~20 synthesized sound effects, all from the page's `BPM`, `SECTIONS` and `EVENTS` (the same data the picture uses, so every action has its sound on the same frame).
-  - `kit`: `'electro'` (kick, clap, hats, saw bass), `'acoustic'` (soft kick, rimshot, shaker, upright-ish bass, nylon pluck), `'keys'` (brushes, electric piano, a string pad), `'percussion'` (toms, woodblocks, shaker, marimba).
-  - `harmony`: `'bright'`, `'wistful'`, `'dreamy'`, `'tense'`, `'folk'`, `'blues'`, or your own chords; `key` transposes.
-  - Layers are yours: a lullaby can be `['padSoft', 'pluck']` with no drums at all.
-  `window.SCORE = ac => buildGroove(ac, { dur: DUR, bpm: BPM, sections: SECTIONS, events: EVENTS, kit: 'acoustic', harmony: 'folk' });`
-- `templates/score.js`: music box, pad and bass with a tempo map that lands each cut on a downbeat; `chime: true` adds a faint bell on cuts.
-
-## Using a template in the page (no key, no files)
-
-To use the music box, paste `templates/score.js` into the animation page's `<script>`, before the live-preview block at the bottom (the starter marks the spot), and set:
-
-```js
-window.SCORE = ac => buildScore(ac, { dur: DUR, cues: window.CUES });
-```
-
-`render.mjs` (from the `javascript-animation` skill) renders the score offline with `OfflineAudioContext`, writes `<out>.wav` and muxes it into the MP4; the page's live preview plays the same score when clicked. It's a music box arpeggio, a soft pad and bass with a little room, plus a faint chime on each cut.
-
-Options: `bar` (target bar length in seconds; 2.67 ≈ 90 bpm, 3 ≈ 80 bpm for lullabies), `key` (semitone transpose), `tail` (seconds of the final resolving chord), `gain`.
+`render.mjs` (from the `javascript-animation` skill) renders `window.SCORE` offline with `OfflineAudioContext`, writes `<out>.wav` and muxes it into the MP4; the page's live preview plays the same score when clicked.
 
 Don't ask the user to choose a music source up front. At delivery, mention in one line that AI-generated music or their own track also work.
 
 ## How the music follows the picture
 
-- **Tempo map.** Each scene gets a whole number of bars (tempo flexes per scene, roughly 70-110 bpm), so every cut lands on a downbeat.
-- **Mark cuts with harmony, not volume.** Each scene walks home to the dominant (G) and the cut arrives on the tonic (C). A loud accent on a cut (bass + bright chime at once) reads as a jump scare: users flagged a +7 to +10 dB jump as startling; +3 to +5 dB with a chord change reads as a clean edit.
+- **Tempo map.** Each scene gets a whole number of bars (the tempo may flex per scene), so every cut lands on a downbeat.
+- **Mark cuts with harmony, not volume.** Each scene walks home to the dominant and the cut arrives on the tonic. A loud accent on a cut (bass + bright chime at once) reads as a jump scare: users flagged a +7 to +10 dB jump as startling; +3 to +5 dB with a chord change reads as a clean edit.
 - **Don't thin the opening bar if it's the only bar before the first cut**; a sparse intro followed by the full texture is itself a startle.
 - **No extra accent on the cut's downbeat.** Even the normal downbeat accent (louder bass + first note) tipped short pieces over +6 dB, because the bar before is decaying. The chord change is enough.
 - **Hard cuts inside a scene count.** Put them in `window.CUES` too, so they get the same downbeat.
