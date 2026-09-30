@@ -38,6 +38,8 @@ A long shot is fine; a long shot where nothing is alive is not.
 
 ## 3. Blocking: one world, many cameras
 
+This is how a story or an explainer holds together. A film that is neither (a title sequence, a film of type, a showreel) holds together by rhythm and one visual idea, and may cut between worlds; its blocking is per world.
+
 - Put every character and prop in **one continuous world** with a track over global time (where it is, its pose, its expression). Shots are only cameras looking at that world (`withCamera`). A cut then can't break continuity: the end of one shot is literally the start of the next.
 - Continuity rules the world model doesn't give you for free:
   - **Carry something over every cut**: the same object crosses the cut, or the camera pushes into a detail that becomes the next scene.

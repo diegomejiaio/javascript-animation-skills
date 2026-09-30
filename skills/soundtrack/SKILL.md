@@ -1,14 +1,14 @@
 ---
 name: soundtrack
 description: This skill should be used when the user asks to "add music to the animation", "make the music in code", "synthesize a soundtrack", "compose background music that fits the cuts", "sync the music to the video", "check if the audio lines up with the picture", or "the music is too sudden / startling". Covers a code-synthesized score that lives inside the animation page (Web Audio API, rendered offline to WAV), AI-generated or user-supplied music, and an automatic check that cuts land on the beat without a startling jump in loudness.
-version: 0.3.0
+version: 0.4.0
 ---
 
 # Soundtrack
 
-## Two templates, many sounds
+## Write the sound for this film
 
-Choose per piece from the mood in the look and sound brief; don't reuse the last piece's sound.
+A film's sound is written for that film: its own instruments, rhythm and harmony in Web Audio, from nothing, in `window.SCORE = ac => { … }` (oscillators, noise, filters, envelopes, delays: whatever the piece calls for). No two films should sound alike because they share a template. The two templates are a starting point, not the default: reach for one when what the film wants is what it makes (a drum groove; a gentle music-box bed), or when the user asks for it.
 
 - `templates/groove.js`: a beat grid with sections, drums, bass, pads, a lead, optional breaks, and ~20 synthesized sound effects, all from the page's `BPM`, `SECTIONS` and `EVENTS` (the same data the picture uses, so every action has its sound on the same frame).
   - `kit`: `'electro'` (kick, clap, hats, saw bass), `'acoustic'` (soft kick, rimshot, shaker, upright-ish bass, nylon pluck), `'keys'` (brushes, electric piano, a string pad), `'percussion'` (toms, woodblocks, shaker, marimba).
@@ -17,15 +17,15 @@ Choose per piece from the mood in the look and sound brief; don't reuse the last
   `window.SCORE = ac => buildGroove(ac, { dur: DUR, bpm: BPM, sections: SECTIONS, events: EVENTS, kit: 'acoustic', harmony: 'folk' });`
 - `templates/score.js`: music box, pad and bass with a tempo map that lands each cut on a downbeat; `chime: true` adds a faint bell on cuts.
 
-## Default: synthesize it in the page (no key, no files)
+## Using a template in the page (no key, no files)
 
-Paste `templates/score.js` into the animation page's `<script>`, before the live-preview block at the bottom (the starter marks the spot), and set:
+To use the music box, paste `templates/score.js` into the animation page's `<script>`, before the live-preview block at the bottom (the starter marks the spot), and set:
 
 ```js
 window.SCORE = ac => buildScore(ac, { dur: DUR, cues: window.CUES });
 ```
 
-That's all. `render.mjs` (from the `javascript-animation` skill) renders the score offline with `OfflineAudioContext`, writes `<out>.wav` and muxes it into the MP4; the page's live preview plays the same score when clicked. It's a music box arpeggio, a soft pad and bass with a little room, plus a faint chime on each cut.
+`render.mjs` (from the `javascript-animation` skill) renders the score offline with `OfflineAudioContext`, writes `<out>.wav` and muxes it into the MP4; the page's live preview plays the same score when clicked. It's a music box arpeggio, a soft pad and bass with a little room, plus a faint chime on each cut.
 
 Options: `bar` (target bar length in seconds; 2.67 ≈ 90 bpm, 3 ≈ 80 bpm for lullabies), `key` (semitone transpose), `tail` (seconds of the final resolving chord), `gain`.
 
