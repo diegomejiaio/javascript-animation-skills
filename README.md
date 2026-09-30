@@ -1,6 +1,6 @@
 # JavaScript Animation Skills
 
-> Every frame drawn in JavaScript: zero image assets, zero API keys, one HTML file, and the music is synthesized in code too. Agent skills for the kind of animation Claude Opus 5.5 made go around: hand-drawn canvas films, rendered frame-accurately to MP4 and self-checked.
+> Every frame drawn in JavaScript: zero image assets, zero API keys, one HTML file, and the music is synthesized in code too. Agent skills for the kind of animation Claude Opus 5.5 made go around: canvas films in any look, rendered frame-accurately to MP4 and self-checked.
 
 ![JavaScript Animation Skills: "I only asked you to fix one line", a 30-second film drawn entirely in code](./showcase.gif)
 
@@ -33,12 +33,12 @@ The skills run in Claude Code, Cursor, Codex, and 40+ agents. The full agent run
 | Skill | What it does |
 |-------|--------------|
 | [javascript-animation](./skills/javascript-animation) | Short animated films computed on an HTML canvas: stories, explainers, loops, picture books from your photos. A drawing library (hand-drawn ink, picture-book illustration, spot-color print, single-line engraving, words as shapes, marker fills), a seek-and-render harness to MP4, contact sheets, and a zero-asset audit. |
-| [soundtrack](./skills/soundtrack) | Music written in code with Web Audio, living inside the same page and rendered offline to WAV. Four instrument kits (electro, acoustic, keys, percussion) and several harmonic moods, chosen per piece. A tempo map lands every scene cut on a downbeat, marked by harmony rather than volume. A sync check fails the render if a cut misses the beat or the music jumps loud enough to startle. Also works with AI-generated or your own music. |
+| [soundtrack](./skills/soundtrack) | Music written in code with Web Audio for each film, living inside the same page and rendered offline to WAV. Two templates (a groove with four instrument kits, a music box) when a film wants what they make. A tempo map lands every scene cut on a downbeat, marked by harmony rather than volume. A sync check fails the render if a cut misses the beat or the music jumps loud enough to startle. Also works with AI-generated or your own music. |
 
 ## How it works
 
 1. The agent derives a look from the subject (two pieces about different things shouldn't look alike).
-2. It writes a **beat grid, a shot list and blocking as data** in the page: tempo, sections (with a break), 10-20 shots on the beat, one continuous world seen through many cameras, and one event list. Pictures, camera and soundtrack all read that data, so sound lands on every action by construction.
+2. It writes a **beat grid, a shot list and blocking as data** in the page: tempo, sections (with a break), shots on the beat, for a story one continuous world seen through many cameras, and one event list. Pictures, camera and soundtrack all read that data, so sound lands on every action by construction.
 3. Every frame is a pure function of time. A headless browser seeks the page into an MP4; the page's Web Audio score (percussion, bass, pads and a synthesized sound for every action) is rendered offline and muxed in.
 4. The agent checks its own work before you see it: zero-asset audit, A/V sync (cuts on the beat, no startling jumps), layout (no text colliding with text or sitting on objects), a still per shot against the storyboard, and a director pass on a 2 fps contact sheet for pace, framing, stillness and a grown-up look.
 

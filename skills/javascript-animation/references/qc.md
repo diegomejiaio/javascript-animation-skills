@@ -41,7 +41,7 @@ The agent runs this; the user never sees it. Open the contact sheet (`render.mjs
 
 ## Motion
 
-- [ ] Line boil is ~7.5 changes/s (every 4 frames), not every frame.
+- [ ] A hand-drawn line boils at ~7.5 changes/s (every 4 frames), not every frame.
 - [ ] Endings hold: the last line appears after motion has settled.
 - [ ] Loops: frame 0 and the last frame match.
 

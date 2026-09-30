@@ -27,7 +27,7 @@ Two different subjects should not come out looking alike. Don't carry a palette 
 
 ## 1. Ink line (in the starter)
 
-`ink(pts, { w, col, seed, amp, passes })` strokes a path twice (a full line and a thinner, fainter second pass) through two-frequency noise, so edges wobble like a pen. `fill`, `hatch` (parallel strokes clipped to a shape), `withShadow` (the same shape offset a few px in a translucent ink) and the paper texture complete the look. Set `BOIL = Math.floor(frame / 4)` so the wobble changes ~7.5x per second.
+`ink(pts, { w, col, seed, amp, passes })` strokes a path through two-frequency noise; with `LOOK.wobble` set, edges wobble like a pen and the path is stroked twice (a full line and a thinner, fainter second pass). With `wobble: 0` it is one steady line. `fill`, `hatch` (parallel strokes clipped to a shape), `withShadow` (the same shape offset a few px in a translucent ink) and the paper texture complete the look. Set `LOOK.boil: 4` so the wobble changes ~7.5x per second.
 
 Tuning: `amp` 1-2.5 px (higher is sketchier); two passes for pen, one for marker; hatch `gap` 6-12 px, alpha 0.2-0.4.
 
