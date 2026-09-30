@@ -1,7 +1,7 @@
 ---
 name: javascript-animation
 description: This skill should be used when the user asks to "draw every frame in JavaScript", "make an animation with no image assets", "animate this in code / on a canvas", "make a hand-drawn style animated video", "turn this into a short animated film", "make an animated explainer drawn in code", "make an animated story / picture book of my photos", or "make a zero-asset animation like the Opus 5.5 ones". Produces a single self-contained HTML file whose frames are computed on an HTML canvas (seekable, deterministic), renders it to MP4, and self-checks the result. Pairs with the soundtrack skill for code-synthesized music. NOT for charts from data (use chart-animation) or 3D/WebGL (use threejs-animation / shader-glsl from webgl-animation-skills); pure text motion and depth drawn by projection on the 2D canvas are in scope.
-version: 0.4.0
+version: 0.4.1
 ---
 
 # JavaScript Animation (every frame drawn in code)

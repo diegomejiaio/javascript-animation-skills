@@ -55,7 +55,7 @@ This is how a story or an explainer holds together. A film that is neither (a ti
 
 ## 5. Events
 
-`EVENTS` lists every visible action with a sound: `[[seconds, 'sfxName', arg], ...]`. The scenes trigger the action at the same time; `buildGroove` (soundtrack skill) plays the sound. One list, two readers.
+`EVENTS` lists every visible action with a sound: `[[seconds, 'soundName', arg], ...]`. The scenes trigger the action at the same time; the score (soundtrack skill) plays its sound. One list, two readers.
 
 ## 6. Check the picture against the storyboard
 
