@@ -19,12 +19,12 @@ The starter already has the skeleton. This is a self-check step: don't stop to a
 
 One row per shot. Pick the pace from the form:
 
-| Form | Typical shot length | 30 s is about |
-|---|---|---|
-| Comedy, hype | 1-3 s | 12-20 shots |
-| Story | 2-5 s | 7-12 shots |
-| Explainer | 3-6 s (one idea per shot) | 5-9 shots |
-| Lullaby, ambient, poem | 5-10 s, long dissolves | 3-6 shots |
+| Form | Typical shot length |
+|---|---|
+| Comedy, hype | 1-3 s |
+| Story | 2-5 s |
+| Explainer | 3-6 s (one idea per shot) |
+| Lullaby, ambient, poem | 5-10 s, long dissolves |
 
 A long shot is fine; a long shot where nothing is alive is not.
 
